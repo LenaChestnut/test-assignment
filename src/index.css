@@ -5,5 +5,12 @@ body {
 }
 
 body {
-    background-image: url('./assets/background-tile.png');
+    height: 100vh;
+    background: center / 100% 200% no-repeat
+            linear-gradient(
+                rgba(0, 0, 0, 1),
+                rgba(0, 0, 0, 0.01),
+                rgba(0, 0, 0, 1)
+            ),
+        url('./assets/background-tile.png');
 }
