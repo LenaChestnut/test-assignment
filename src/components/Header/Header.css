@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Exo2.0';
+    src: url('../../assets/Exo2.0-Thin.otf');
+}
+
+h1 {
+    font-family: 'Exo2.0';
+    font-size: 36px;
+    color: #fff;
+    font-weight: 100;
+}
