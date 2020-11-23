@@ -1,6 +1,11 @@
 @font-face {
     font-family: 'Exo2.0';
-    src: url('../../assets/Exo2.0-Thin.otf');
+    src: url(../../assets/Exo2.0-Thin.eot?) format('eot'),
+        url(../../assets/Exo2.0-Thin.woff) format('woff'),
+        url(../../assets/Exo2.0-Thin.otf) format('opentype'),
+        url(../../assets/Exo2.0-Thin.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 h1 {
