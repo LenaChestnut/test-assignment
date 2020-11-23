@@ -1,9 +1,12 @@
 import React from 'react';
+import './Card.css';
 
 function Card() {
     return (
         <div className="card">
-            <h2>Nyam</h2>
+            <div className="card-border">
+                <div className="card-backdrop"></div>
+            </div>
         </div>
     );
 }
