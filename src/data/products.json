@@ -1,0 +1,20 @@
+{
+    "name": "Нямушка",
+    "flavors": {
+        "foie-gras": {
+            "flavorName": "с фуа-гра",
+            "flavorDescription": "Печень утки разварная с артишоками."
+        },
+        "fish": {
+            "flavorName": "с рыбой",
+            "flavorDescription": "Головы щучьи с чесноком да свежайшая сёмгушка."
+        },
+        "chicken": {
+            "flavorName": "с курой",
+            "flavorDescription": "Филе из цыплят с трюфелями в бульоне."
+        }
+    },
+    "servings": [10, 40, 100],
+    "weight": ["0,5", "2", "5"],
+    "gifts": ["мышь"]
+}
