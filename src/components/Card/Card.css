@@ -1,33 +1,37 @@
 .card {
     font-family: 'Trebuchet MS', Arial, sans-serif;
+    width: 320px;
+    text-align: center;
+}
+
+.card-border,
+.card-backdrop {
+    height: 480px;
+    width: 320px;
+    border-radius: 12px;
 }
 
 .card-border {
-    position: relative;
-    height: 480px;
-    width: 320px;
     background: linear-gradient(
         135deg,
         transparent 36px,
         transparent 36px,
         #1698d9 36px
     );
-    border-radius: 12px;
+    margin-bottom: 14px;
 }
 
 .card-backdrop {
     position: relative;
-    height: 480px;
-    width: 320px;
     box-sizing: border-box;
-    background: left -24px top 208px no-repeat url(../../assets/cat.png),
+    padding: 17px 12px 12px 44px;
+    background: left -28px top 212px no-repeat url(../../assets/cat.png),
         linear-gradient(
             135deg,
             transparent 32px,
             transparent 32px,
             #f2f2f2 32px
         );
-    border-radius: 12px;
     border: 4px solid transparent;
     background-clip: padding-box;
     overflow: hidden;
@@ -61,4 +65,81 @@
     top: -48px;
     left: -59px;
     box-shadow: 4px 0 0 #1698d9;
+}
+
+.card p,
+.card-text-flavor {
+    margin: 0;
+}
+
+.card-text-description,
+.card-text-purchase-info p {
+    color: #666;
+}
+
+.card-text {
+    text-align: left;
+}
+
+.card-text-description {
+    font-size: 16px;
+}
+
+.card-text-title {
+    font-size: 48px;
+    margin: 5px 0 0 -3px;
+}
+
+.card-text-flavor {
+    font-size: 24px;
+}
+
+.card-text-purchase-info {
+    margin-top: 15px;
+}
+
+.card-text-purchase-info p {
+    font-size: 14px;
+}
+
+.info-servings {
+    font-weight: 700;
+}
+
+.weight-label {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    background: #1698d9;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    padding: 15px 0 12px 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.weight-label p {
+    color: #fff;
+}
+
+.weight-label-amount {
+    font-size: 42px;
+    line-height: 32px;
+}
+
+.weight-label-unit {
+    font-size: 21px;
+    line-height: 27px;
+}
+
+.card-message {
+    font-size: 13px;
+    color: #fff;
+}
+
+.card-message a {
+    color: #1698d9;
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
 }
