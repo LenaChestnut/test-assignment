@@ -28,6 +28,6 @@ module.exports = {
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
     'linebreak-style': 'off',
     'no-console': 'off',
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+    "import/no-extraneous-dependencies": 'off',
   },
 };

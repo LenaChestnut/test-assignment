@@ -1,65 +1,22 @@
-# npm
+# Нямушка - тестовое задание
 
-1. npm init
+## Требования
 
-# .gitignore
+1. Фон занимает всю площадь экрана, блок находится по центру вертикально и
+   горизонтально.
+2. На планшетах упаковки располагаются треугольником, на смартфонах друг под
+   другом.
+3. Информация о продукте может меняться.
+4. Каждая из упаковок может быть выбрана или недоступна для выбора. Выбор
+   осуществляется нажатием на упаковку или на текст «купи» в описании.
+5. Можно выбрать одновременно несколько упаковок, а также отменить свой
+   выбор повторным нажатием на упаковку.
+6. Состояние наведения применяется к выбранной упаковке не сразу, а после того,
+   как курсор ушел с нее после первоначального выбора.
 
-node_modules/
-dist/
+### Браузеры
 
-# Webpack
-
-1. npm install webpack webpack-cli webpack-dev-server --save-dev
-
-## Webpack Configuration
-
-Create webpack.config.js
-
-```javascript
-const path = require('path');
-
-module.exports = {
-    entry: './src/index.js',
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-    },
-};
-```
-
-### Loaders
-
--   style-loader
--   css-loader
-
-### Plugins
-
--   html-webpack-plugin
--   clean-webpack-plugin
--   mini-css-extract-plugin
--   terser-webpack-plugin
--   css-minimizer-webpack-plugin
-
-## Scripts
-
-"build": "webpack --config webpack.prod.js",
-"start": "webpack serve --config webpack.dev.js"
-
-# React
-
-npm i react react-dom
-
-# Babel
-
-npm install -D babel-loader @babel/core @babel/preset-env @babel/preset-react
-
-# Testing tools
-
--   Jest
--   React Testing Library
--   jest-dom
-
-# Formating tools
-
--   ESLint
--   Prettier
+-   Chrome
+-   Firefox
+-   IE11
+-   Safari (нет возможности проверить на устройстве Apple)
