@@ -12,12 +12,7 @@
 }
 
 .card-border {
-    background: linear-gradient(
-        135deg,
-        transparent 36px,
-        transparent 36px,
-        #1698d9 36px
-    );
+    background: linear-gradient(135deg, transparent 36px, transparent 36px, #1698d9 36px);
     margin-bottom: 14px;
 }
 
@@ -26,12 +21,7 @@
     box-sizing: border-box;
     padding: 17px 12px 12px 44px;
     background: left -28px top 212px no-repeat url(../../assets/cat.png),
-        linear-gradient(
-            135deg,
-            transparent 32px,
-            transparent 32px,
-            #f2f2f2 32px
-        );
+        linear-gradient(135deg, transparent 32px, transparent 32px, #f2f2f2 32px);
     border: 4px solid transparent;
     background-clip: padding-box;
     overflow: hidden;
@@ -45,12 +35,7 @@
     only screen and (min-resolution: 2dppx) {
     .card-backdrop {
         background: left -24px top 208px / 368px 360px no-repeat url(../../assets/cat@2x.png),
-            linear-gradient(
-                135deg,
-                transparent 32px,
-                transparent 32px,
-                #f2f2f2 32px
-            );
+            linear-gradient(135deg, transparent 32px, transparent 32px, #f2f2f2 32px);
         background-clip: padding-box;
     }
 }
@@ -102,7 +87,8 @@
     font-size: 14px;
 }
 
-.info-servings {
+.info-servings,
+.info-gift {
     font-weight: 700;
 }
 

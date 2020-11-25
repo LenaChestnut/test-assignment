@@ -11,9 +11,7 @@ function App() {
             <div className="cards-display">
                 <Card
                     flavorName={product.flavors['foie-gras'].flavorName}
-                    flavorDescription={
-                        product.flavors['foie-gras'].flavorDescription
-                    }
+                    flavorDescription={product.flavors['foie-gras'].flavorDescription}
                     weight={product.weight[0]}
                 />
             </div>

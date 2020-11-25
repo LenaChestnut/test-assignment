@@ -3,7 +3,27 @@ import PropTypes from 'prop-types';
 import './Card.css';
 
 function Card(props) {
-    const { name, tagline, flavorName, flavorDescription } = props;
+    const { name, tagline, flavorName, flavorDescription, weight } = props;
+
+    const servings = weight / 0.05;
+
+    let gift;
+
+    if (weight === 0.5) {
+        gift = <p>мышь в подарок</p>;
+    } else if (weight === 2) {
+        gift = (
+            <p>
+                <span className="info-gift">2</span> мыши в подарок
+            </p>
+        );
+    } else {
+        gift = (
+            <p>
+                <span className="info-gift">5</span> мышей в подарок
+            </p>
+        );
+    }
 
     return (
         <div className="card">
@@ -15,13 +35,14 @@ function Card(props) {
                         <h3 className="card-text-flavor">{flavorName}</h3>
                         <div className="card-text-purchase-info">
                             <p>
-                                <span className="info-servings">10</span> порций
+                                <span className="info-servings">{servings}</span> порций
                             </p>
-                            <p>мышь в подарок</p>
+                            {gift}
+                            {servings >= 100 ? <p>заказчик доволен</p> : null}
                         </div>
                     </div>
                     <div className="weight-label">
-                        <p className="weight-label-amount">0,5</p>
+                        <p className="weight-label-amount">{`${weight}`.replace('.', ',')}</p>
                         <p className="weight-label-unit">кг</p>
                     </div>
                 </div>
@@ -39,6 +60,7 @@ Card.propTypes = {
     tagline: PropTypes.string,
     flavorName: PropTypes.string,
     flavorDescription: PropTypes.string,
+    weight: PropTypes.number,
 };
 
 Card.defaultProps = {
@@ -46,6 +68,7 @@ Card.defaultProps = {
     tagline: 'Сказочное заморское яство',
     flavorName: 'с фуа-гра',
     flavorDescription: 'Печень утки разварная с артишоками.',
+    weight: 0.5,
 };
 
 export default Card;
