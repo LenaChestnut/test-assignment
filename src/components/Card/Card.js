@@ -25,6 +25,12 @@ function Card(props) {
         );
     }
 
+    const purchaseButton = (
+        <button type="button" className="purchase-button">
+            купи
+        </button>
+    );
+
     return (
         <div className="card">
             <div className="card-border">
@@ -48,8 +54,10 @@ function Card(props) {
                 </div>
             </div>
             <p className="card-message">
-                {/* Чего сидишь? Порадуй котэ, <a href=".">купи.</a> */}
-                {flavorDescription}
+                {/* Чего сидишь? Порадуй котэ, <button type="button" className="purchase-button">купи</button><span style={{ color: '#1698d9' }}>.</span> */}
+                Чего сидишь? Порадуй котэ, {purchaseButton}
+                <span style={{ color: '#1698d9' }}>.</span>
+                {/* {flavorDescription} */}
             </p>
         </div>
     );
