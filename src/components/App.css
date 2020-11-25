@@ -6,7 +6,6 @@
 }
 
 .cards-display {
-    padding-top: 24px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
