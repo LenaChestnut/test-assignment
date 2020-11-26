@@ -7,11 +7,11 @@ body {
 body {
     height: 100vh;
     background: center / 100% 200%
-            linear-gradient(
-                rgba(0, 0, 0, 1),
-                rgba(0, 0, 0, 0.01),
-                rgba(0, 0, 0, 1)
-            ),
+            linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 1)),
         url('./assets/background-tile.png');
     background-color: #222;
+}
+
+#root {
+    padding: 36px 1em 0;
 }

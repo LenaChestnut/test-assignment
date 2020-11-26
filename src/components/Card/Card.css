@@ -13,16 +13,16 @@
 }
 
 .card-border {
-    background: linear-gradient(135deg, transparent 36px, transparent 36px, #1698d9 36px);
+    background: linear-gradient(135deg, transparent 30px, transparent 30px, #1698d9 30px);
     margin-bottom: 14px;
 }
 
 .card-backdrop {
     position: relative;
     box-sizing: border-box;
-    padding: 17px 12px 12px 44px;
-    background: left -28px top 212px no-repeat url(../../assets/cat.png),
-        linear-gradient(135deg, transparent 32px, transparent 32px, #f2f2f2 32px);
+    padding: 17px 12px 12px 47px;
+    background: left -28px top 204px no-repeat url(../../assets/cat.png),
+        linear-gradient(135deg, transparent 28px, transparent 28px, #f2f2f2 28px);
     border: 4px solid transparent;
     background-clip: padding-box;
     overflow: hidden;
@@ -35,8 +35,8 @@
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     .card-backdrop {
-        background: left -24px top 208px / 368px 360px no-repeat url(../../assets/cat@2x.png),
-            linear-gradient(135deg, transparent 32px, transparent 32px, #f2f2f2 32px);
+        background: left -28px top 204px / 368px 360px no-repeat url(../../assets/cat@2x.png),
+            linear-gradient(135deg, transparent 28px, transparent 28px, #f2f2f2 28px);
         background-clip: padding-box;
     }
 }
@@ -49,7 +49,7 @@
     content: '';
     transform: rotate(45deg);
     top: -48px;
-    left: -59px;
+    left: -67px;
     box-shadow: 4px 0 0 #1698d9;
 }
 
@@ -78,6 +78,7 @@
 
 .card-text-flavor {
     font-size: 24px;
+    margin-top: -1px;
 }
 
 .card-text-purchase-info {
@@ -124,12 +125,6 @@
     font-size: 13px;
     color: #fff;
 }
-
-/* .card-message a {
-    color: #1698d9;
-    text-decoration: none;
-    border-bottom: 1px dashed currentColor;
-} */
 
 .purchase-button {
     font-family: 'Trebuchet MS', Arial, sans-serif;
