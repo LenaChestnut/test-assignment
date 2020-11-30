@@ -8,10 +8,22 @@
     font-style: normal;
 }
 
-h1 {
+.header {
     font-family: 'Exo2.0';
     font-size: 36px;
-    color: #fff;
     font-weight: 100;
+    color: #fff;
     margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .header {
+        font-size: 24px;
+    }
 }

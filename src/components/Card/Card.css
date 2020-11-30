@@ -1,8 +1,8 @@
 .card {
-    margin-top: 24px;
     font-family: 'Trebuchet MS', Arial, sans-serif;
     width: 320px;
     text-align: center;
+    margin: 24px auto 0;
 }
 
 .card-border,
