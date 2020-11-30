@@ -136,3 +136,28 @@
     border-bottom: 1px dashed currentColor;
     cursor: pointer;
 }
+
+/* COLOR CHANGES */
+
+.card-border,
+.card-backdrop::before,
+.weight-label,
+.purchase-button {
+    transition: all 0.2s;
+}
+
+.card:hover .card-border {
+    background: linear-gradient(135deg, transparent 30px, transparent 30px, #2ea8e6 30px);
+}
+
+.card:hover .card-backdrop::before {
+    box-shadow: 4px 0 0 #2ea8e6;
+}
+
+.card:hover .weight-label {
+    background: #2ea8e6;
+}
+
+.card:hover .purchase-button {
+    color: #2ea8e6;
+}
