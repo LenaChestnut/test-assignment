@@ -1,38 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
+import CardMessage from './CardMessage/CardMessage';
+import { getServingsAmount, getGiftMessage } from '../utils';
 
 function Card(props) {
-    const { name, tagline, flavorName, flavorDescription, weight } = props;
+    const { name, tagline, flavorName, flavorDescription, isAvailable, weight } = props;
+    const { isSelected, setIsSelected } = useState(false);
 
-    const servings = weight / 0.05;
+    const servings = getServingsAmount(weight);
 
-    let gift;
-
-    if (weight === 0.5) {
-        gift = <p>мышь в подарок</p>;
-    } else if (weight === 2) {
-        gift = (
-            <p>
-                <span className="info-gift">2</span> мыши в подарок
-            </p>
-        );
-    } else {
-        gift = (
-            <p>
-                <span className="info-gift">5</span> мышей в подарок
-            </p>
-        );
-    }
-
-    const purchaseButton = (
-        <button type="button" className="purchase-button">
-            купи
-        </button>
-    );
+    const gift = getGiftMessage(weight);
 
     return (
-        <div className="card">
+        <div className={isAvailable ? 'card' : 'card card-disabled'}>
             <div className="card-border">
                 <div className="card-backdrop">
                     <div className="card-text">
@@ -53,12 +34,12 @@ function Card(props) {
                     </div>
                 </div>
             </div>
-            <p className="card-message">
-                {/* Чего сидишь? Порадуй котэ, <button type="button" className="purchase-button">купи</button><span style={{ color: '#1698d9' }}>.</span> */}
-                Чего сидишь? Порадуй котэ, {purchaseButton}
-                <span style={{ color: '#1698d9' }}>.</span>
-                {/* {flavorDescription} */}
-            </p>
+            <CardMessage
+                isAvailable={isAvailable}
+                isSelected={isSelected}
+                flavorName={flavorName}
+                flavorDescription={flavorDescription}
+            />
         </div>
     );
 }
@@ -69,6 +50,7 @@ Card.propTypes = {
     flavorName: PropTypes.string,
     flavorDescription: PropTypes.string,
     weight: PropTypes.number,
+    isAvailable: PropTypes.bool,
 };
 
 Card.defaultProps = {
@@ -77,6 +59,7 @@ Card.defaultProps = {
     flavorName: 'с фуа-гра',
     flavorDescription: 'Печень утки разварная с артишоками.',
     weight: 0.5,
+    isAvailable: true,
 };
 
 export default Card;
