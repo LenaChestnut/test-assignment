@@ -7,20 +7,18 @@ function CardMessage(props) {
     let message;
 
     if (isAvailable && isSelected) {
-        message = <p className="card-message">{flavorDescription}</p>;
+        message = <p className="message">{flavorDescription}</p>;
     } else if (isAvailable && !isSelected) {
         message = (
-            <p className="card-message">
+            <p className="message">
                 Чего сидишь? Порадуй котэ,{' '}
-                <button type="button" className="purchase-button">
+                <button type="button" className="message__purchase-button">
                     купи.
                 </button>
             </p>
         );
     } else {
-        message = (
-            <p className="card-message card-message-disabled">Печалька, {flavorName} закончился.</p>
-        );
+        message = <p className="message message_disabled">Печалька, {flavorName} закончился.</p>;
     }
 
     return <div>{message}</div>;

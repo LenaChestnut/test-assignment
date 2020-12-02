@@ -8,7 +8,7 @@ function App() {
     return (
         <div className="app">
             <Header />
-            <div className="cards-display">
+            <div className="app__cards-display">
                 <Card
                     flavorName={product.flavors['foie-gras'].flavorName}
                     flavorDescription={product.flavors['foie-gras'].flavorDescription}

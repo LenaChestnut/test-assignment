@@ -7,31 +7,29 @@
     margin: 24px auto 0;
 }
 
-.card-border,
-.card-backdrop {
+.card__border,
+.card__backdrop {
     height: 480px;
     width: 320px;
     border-radius: 12px;
 }
 
-.card-border {
+.card__border {
     background: linear-gradient(135deg, transparent 30px, transparent 30px, #1698d9 30px);
     margin-bottom: 14px;
 }
 
-.card-backdrop {
+.card__backdrop {
     position: relative;
     box-sizing: border-box;
     padding: 17px 12px 12px 47px;
-    /* background: left -28px top 204px no-repeat url(../../assets/cat.png),
-        linear-gradient(135deg, transparent 28px, transparent 28px, #f2f2f2 28px); */
     background: linear-gradient(135deg, transparent 28px, transparent 28px, #f2f2f2 28px);
     border: 4px solid transparent;
     background-clip: padding-box;
     overflow: hidden;
 }
 
-.card-backdrop::after {
+.card__backdrop::after {
     content: '';
     position: absolute;
     top: 0;
@@ -39,6 +37,7 @@
     background: left -28px top 204px / 368px 360px no-repeat url(../../assets/cat.png);
     height: 480px;
     width: 320px;
+    pointer-events: none;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -47,17 +46,17 @@
     only screen and (min-device-pixel-ratio: 2),
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
-    .card-backdrop {
+    .card__backdrop {
         background: linear-gradient(135deg, transparent 28px, transparent 28px, #f2f2f2 28px);
         background-clip: padding-box;
     }
 
-    .card-backdrop::after {
+    .card__backdrop::after {
         background: left -28px top 204px / 368px 360px no-repeat url(../../assets/cat@2x.png);
     }
 }
 
-.card-backdrop::before {
+.card__backdrop::before {
     content: '';
     position: absolute;
     height: 88px;
@@ -71,51 +70,47 @@
 
 /* TEXT */
 
-.card p,
-.card-text-flavor {
+.card__text {
+    text-align: left;
+}
+
+p,
+.card__flavor {
     margin: 0;
 }
 
-.card-text {
-    text-align: left;
-    color: #000;
-}
-
-.card-text-description,
-.card-text-purchase-info {
+.card__tagline,
+.card__purchase-info {
     color: #666;
 }
 
-.card-text-description {
+.card__tagline {
     font-size: 16px;
 }
 
-.card-text-title {
+.card__title {
     font-size: 48px;
     margin: 5px 0 0 -3px;
 }
 
-.card-text-flavor {
+.card__flavor {
     font-size: 24px;
     margin-top: -1px;
 }
 
-.card-text-purchase-info {
+.card__purchase-info {
+    font-size: 14px;
     margin-top: 15px;
 }
 
-.card-text-purchase-info p {
-    font-size: 14px;
-}
-
-.info-servings,
-.info-gift {
+.card__servings-info,
+.card__gift-info {
     font-weight: 700;
 }
 
 /* WEIGHT LABEL */
 
-.weight-label {
+.card__weight-label {
     position: absolute;
     right: 12px;
     bottom: 12px;
@@ -130,24 +125,24 @@
     z-index: 5;
 }
 
-.weight-label-amount {
+.card__amount {
     font-size: 42px;
     line-height: 32px;
 }
 
-.weight-label-unit {
+.card__unit {
     font-size: 21px;
     line-height: 27px;
 }
 
 /* CARD MESSAGE */
 
-.card-message {
+.message {
     font-size: 13px;
     color: #fff;
 }
 
-.purchase-button {
+.message__purchase-button {
     font-family: 'Trebuchet MS', Arial, sans-serif;
     font-size: 13px;
     color: #1698d9;
@@ -158,7 +153,7 @@
     position: relative;
 }
 
-.purchase-button:before {
+.message__purchase-button:before {
     position: absolute;
     bottom: 0px;
     content: '';
@@ -169,56 +164,56 @@
 
 /* COLOR CHANGES */
 
-.card-border,
-.card-backdrop::before,
-.weight-label,
-.purchase-button {
+.card__border,
+.card__backdrop::before,
+.card__weight-label,
+.message__purchase-button {
     transition: all 0.2s;
 }
 
 /* Hover */
 
-.card:hover:not(.card-disabled) .card-border {
+.card:hover:not(.card_disabled) .card__border {
     background: linear-gradient(135deg, transparent 30px, transparent 30px, #2ea8e6 30px);
 }
 
-.card:hover:not(.card-disabled) .card-backdrop::before {
+.card:hover:not(.card_disabled) .card__backdrop::before {
     box-shadow: 4px 0 0 #2ea8e6;
 }
 
-.card:hover:not(.card-disabled) .weight-label {
+.card:hover:not(.card_disabled) .card__weight-label {
     background: #2ea8e6;
 }
 
-.card:hover:not(.card-disabled) .purchase-button {
+.card:hover:not(.card_disabled) .message__purchase-button {
     color: #2ea8e6;
 }
 
 /* Disabled */
 
-.card-disabled .card-border {
+.card_disabled .card__border {
     background: linear-gradient(135deg, transparent 30px, transparent 30px, #b3b3b3 30px);
 }
 
-.card-disabled .card-backdrop::after {
+.card_disabled .card__backdrop::after {
     opacity: 0.5;
 }
 
-.card-disabled .card-backdrop::before {
+.card_disabled .card__backdrop::before {
     box-shadow: 4px 0 0 #b3b3b3;
 }
 
-.card-disabled .weight-label {
+.card_disabled .card__weight-label {
     background: #b3b3b3;
 }
 
-.card-disabled .card-text,
-.card-disabled .card-text-description,
-.card-disabled .card-text-purchase-info {
+.card_disabled .card__text,
+.card_disabled .card__tagline,
+.card_disabled .card__purchase-info {
     color: #b3b3b3;
     opacity: 0.5;
 }
 
-.card-message-disabled {
+.message_disabled {
     color: #ffff66;
 }

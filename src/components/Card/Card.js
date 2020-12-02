@@ -13,24 +13,24 @@ function Card(props) {
     const gift = getGiftMessage(weight);
 
     return (
-        <div className={isAvailable ? 'card' : 'card card-disabled'}>
-            <div className="card-border">
-                <div className="card-backdrop">
-                    <div className="card-text">
-                        <p className="card-text-description">{tagline}</p>
-                        <h2 className="card-text-title">{name}</h2>
-                        <h3 className="card-text-flavor">{flavorName}</h3>
-                        <div className="card-text-purchase-info">
+        <div className={isAvailable ? 'card' : 'card card_disabled'}>
+            <div className="card__border">
+                <div className="card__backdrop">
+                    <div className="card__text">
+                        <p className="card__tagline">{tagline}</p>
+                        <h2 className="card__title">{name}</h2>
+                        <h3 className="card__flavor">{flavorName}</h3>
+                        <div className="card__purchase-info">
                             <p>
-                                <span className="info-servings">{servings}</span> порций
+                                <span className="card__servings-info">{servings}</span> порций
                             </p>
                             {gift}
                             {servings >= 100 ? <p>заказчик доволен</p> : null}
                         </div>
                     </div>
-                    <div className="weight-label">
-                        <p className="weight-label-amount">{`${weight}`.replace('.', ',')}</p>
-                        <p className="weight-label-unit">кг</p>
+                    <div className="card__weight-label">
+                        <p className="card__amount">{`${weight}`.replace('.', ',')}</p>
+                        <p className="card__weight-label-unit">кг</p>
                     </div>
                 </div>
             </div>

@@ -12,13 +12,13 @@ function getGiftMessage(weight) {
     } else if (weight === 2) {
         gift = (
             <p>
-                <span className="info-gift">2</span> мыши в подарок
+                <span className="card__gift-info">2</span> мыши в подарок
             </p>
         );
     } else {
         gift = (
             <p>
-                <span className="info-gift">5</span> мышей в подарок
+                <span className="card__gift-info">5</span> мышей в подарок
             </p>
         );
     }
