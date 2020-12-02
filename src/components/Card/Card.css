@@ -4,7 +4,13 @@
     font-family: 'Trebuchet MS', Arial, sans-serif;
     width: 320px;
     text-align: center;
-    margin: 24px auto 0;
+    margin-top: 24px;
+}
+
+@media screen and (max-width: 1160px) {
+    .card {
+        margin: 24px auto 0;
+    }
 }
 
 .card__border,

@@ -30,7 +30,7 @@ function Card(props) {
                     </div>
                     <div className="card__weight-label">
                         <p className="card__amount">{`${weight}`.replace('.', ',')}</p>
-                        <p className="card__weight-label-unit">кг</p>
+                        <p className="card__unit">кг</p>
                     </div>
                 </div>
             </div>
