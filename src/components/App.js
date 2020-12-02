@@ -13,16 +13,19 @@ function App() {
                     flavorName={product.flavors['foie-gras'].flavorName}
                     flavorDescription={product.flavors['foie-gras'].flavorDescription}
                     weight={product.weight[0]}
+                    isAvailable={product.flavors['foie-gras'].isAvailable}
                 />
                 <Card
                     flavorName={product.flavors.fish.flavorName}
                     flavorDescription={product.flavors.fish.flavorDescription}
                     weight={product.weight[1]}
+                    isAvailable={product.flavors.fish.isAvailable}
                 />
                 <Card
                     flavorName={product.flavors.chicken.flavorName}
                     flavorDescription={product.flavors.chicken.flavorDescription}
                     weight={product.weight[2]}
+                    isAvailable={product.flavors.chicken.isAvailable}
                 />
             </div>
         </div>
