@@ -29,5 +29,6 @@ module.exports = {
     'linebreak-style': 'off',
     'no-console': 'off',
     "import/no-extraneous-dependencies": 'off',
+    'react/require-default-props': 'off',
   },
 };
