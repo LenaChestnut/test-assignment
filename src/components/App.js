@@ -10,10 +10,10 @@ function App() {
             <Header />
             <div className="app__cards-display">
                 <Card
-                    flavorName={product.flavors['foie-gras'].flavorName}
-                    flavorDescription={product.flavors['foie-gras'].flavorDescription}
+                    flavorName={product.flavors.foieGras.flavorName}
+                    flavorDescription={product.flavors.foieGras.flavorDescription}
                     weight={product.weight[0]}
-                    isAvailable={product.flavors['foie-gras'].isAvailable}
+                    isAvailable={product.flavors.foieGras.isAvailable}
                 />
                 <Card
                     flavorName={product.flavors.fish.flavorName}

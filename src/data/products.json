@@ -2,7 +2,7 @@
     "name": "Нямушка",
     "tagline": "Сказочное заморское яство",
     "flavors": {
-        "foie-gras": {
+        "foieGras": {
             "flavorName": "с фуа-гра",
             "flavorDescription": "Печень утки разварная с артишоками.",
             "isAvailable": true
