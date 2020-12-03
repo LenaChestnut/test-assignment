@@ -18,7 +18,9 @@ function Card(props) {
 
     let cardClass = 'card';
 
-    if (!isAvailable) {
+    if (isAvailable && !isSelected) {
+        cardClass += ' card_default';
+    } else if (!isAvailable) {
         cardClass += ' card_disabled';
     } else if (isSelected) {
         cardClass += ' card_selected';

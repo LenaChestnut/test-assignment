@@ -33,6 +33,7 @@
     border: 4px solid transparent;
     background-clip: padding-box;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .card__backdrop::after {
@@ -174,31 +175,63 @@ p,
 .card__backdrop::before,
 .card__weight-label,
 .message__purchase-button {
-    transition: all 0.2s;
+    transition: all 0.1s;
 }
 
 /* Hover */
 
-.card:hover:not(.card_disabled) .card__border {
+.card_default:hover .card__border {
     background: linear-gradient(135deg, transparent 30px, transparent 30px, #2ea8e6 30px);
 }
 
-.card:hover:not(.card_disabled) .card__backdrop::before {
+.card_default:hover .card__backdrop::before {
     box-shadow: 4px 0 0 #2ea8e6;
 }
 
-.card:hover:not(.card_disabled) .card__weight-label {
+.card_default:hover .card__weight-label {
     background: #2ea8e6;
 }
 
-.card:hover:not(.card_disabled) .message__purchase-button {
+.card_default:hover .message__purchase-button {
     color: #2ea8e6;
+}
+
+/* Selected */
+
+.card_selected .card__border {
+    background: linear-gradient(135deg, transparent 30px, transparent 30px, #d91667 30px);
+}
+
+.card_selected .card__backdrop::before {
+    box-shadow: 4px 0 0 #d91667;
+}
+
+.card_selected .card__weight-label {
+    background: #d91667;
+}
+
+/* Hover - Selected */
+
+.card_selected:hover .card__border {
+    background: linear-gradient(135deg, transparent 30px, transparent 30px, #e52e7a 30px);
+}
+
+.card_selected:hover .card__backdrop::before {
+    box-shadow: 4px 0 0 #e52e7a;
+}
+
+.card_selected:hover .card__weight-label {
+    background: #e52e7a;
 }
 
 /* Disabled */
 
 .card_disabled .card__border {
     background: linear-gradient(135deg, transparent 30px, transparent 30px, #b3b3b3 30px);
+}
+
+.card_disabled .card__backdrop {
+    cursor: default;
 }
 
 .card_disabled .card__backdrop::after {
