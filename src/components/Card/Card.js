@@ -5,16 +5,28 @@ import CardMessage from './CardMessage/CardMessage';
 import { getServingsAmount, getGiftMessage } from '../utils';
 
 function Card(props) {
+    const [isSelected, setIsSelected] = useState(false);
     const { name, tagline, flavorName, flavorDescription, isAvailable, weight } = props;
-    const { isSelected, setIsSelected } = useState(false);
 
     const servings = getServingsAmount(weight);
 
     const gift = getGiftMessage(weight);
 
+    function selectProduct() {
+        setIsSelected(!isSelected);
+    }
+
+    let cardClass = 'card';
+
+    if (!isAvailable) {
+        cardClass += ' card_disabled';
+    } else if (isSelected) {
+        cardClass += ' card_selected';
+    }
+
     return (
-        <div className={isAvailable ? 'card' : 'card card_disabled'}>
-            <div className="card__border">
+        <div className={cardClass}>
+            <div className="card__border" onClick={isAvailable ? () => selectProduct() : null}>
                 <div className="card__backdrop">
                     <div className="card__text">
                         <p className="card__tagline">{tagline}</p>
@@ -39,6 +51,7 @@ function Card(props) {
                 isSelected={isSelected}
                 flavorName={flavorName}
                 flavorDescription={flavorDescription}
+                selectProduct={selectProduct}
             />
         </div>
     );

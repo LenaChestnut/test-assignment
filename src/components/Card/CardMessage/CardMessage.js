@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function CardMessage(props) {
-    const { isAvailable, isSelected, flavorName, flavorDescription } = props;
+    const { isAvailable, isSelected, flavorName, flavorDescription, selectProduct } = props;
 
     let message;
 
@@ -12,7 +12,11 @@ function CardMessage(props) {
         message = (
             <p className="message">
                 Чего сидишь? Порадуй котэ,{' '}
-                <button type="button" className="message__purchase-button">
+                <button
+                    type="button"
+                    className="message__purchase-button"
+                    onClick={() => selectProduct()}
+                >
                     купи.
                 </button>
             </p>
@@ -29,6 +33,7 @@ CardMessage.propTypes = {
     isSelected: PropTypes.bool,
     flavorName: PropTypes.string,
     flavorDescription: PropTypes.string,
+    selectProduct: PropTypes.func,
 };
 
 export default CardMessage;
