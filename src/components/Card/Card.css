@@ -130,6 +130,7 @@ p,
     text-align: center;
     box-sizing: border-box;
     z-index: 5;
+    pointer-events: none;
 }
 
 .card__amount {
