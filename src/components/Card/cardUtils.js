@@ -26,4 +26,18 @@ function getGiftMessage(weight) {
     return gift;
 }
 
-export { getServingsAmount, getGiftMessage };
+function getCardClasses(available, selected, stateChanged) {
+    let newClass;
+
+    if (available && !selected) {
+        newClass = stateChanged ? 'card_default_initial' : 'card_default';
+    } else if (selected) {
+        newClass = stateChanged ? 'card_selected_initial' : 'card_selected';
+    } else if (!available) {
+        newClass = 'card_disabled';
+    }
+
+    return ['card', newClass];
+}
+
+export { getServingsAmount, getGiftMessage, getCardClasses };

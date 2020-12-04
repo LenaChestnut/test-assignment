@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
 import CardMessage from './CardMessage/CardMessage';
-import { getServingsAmount, getGiftMessage } from '../utils';
+import { getServingsAmount, getGiftMessage, getCardClasses } from './cardUtils';
 
 function Card(props) {
     const [isSelected, setIsSelected] = useState(false);
@@ -13,23 +13,7 @@ function Card(props) {
 
     const gift = getGiftMessage(weight);
 
-    const cardClasses = ['card'];
-
-    if (isAvailable && !isSelected) {
-        if (isSelectionChanged) {
-            cardClasses.push('card_default_initial');
-        } else {
-            cardClasses.push('card_default');
-        }
-    } else if (isSelected) {
-        if (isSelectionChanged) {
-            cardClasses.push('card_selected_initial');
-        } else {
-            cardClasses.push('card_selected');
-        }
-    } else if (!isAvailable) {
-        cardClasses.push('card_disabled');
-    }
+    const cardClasses = getCardClasses(isAvailable, isSelected, isSelectionChanged);
 
     function markSelected(selected) {
         if (isAvailable) {
