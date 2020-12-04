@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
 import CardMessage from './CardMessage/CardMessage';
-import { getServingsAmount, getGiftMessage, getCardClasses } from './cardUtils';
+import { getServingsAmount, getGiftMessage, getCardClasses } from '../../utils/utils';
 
 function Card(props) {
     const [isSelected, setIsSelected] = useState(false);
