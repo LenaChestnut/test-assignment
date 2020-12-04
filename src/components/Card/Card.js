@@ -6,29 +6,48 @@ import { getServingsAmount, getGiftMessage } from '../utils';
 
 function Card(props) {
     const [isSelected, setIsSelected] = useState(false);
+    const [isSelectionChanged, setIsSelectionChanged] = useState(false);
     const { name, tagline, flavorName, flavorDescription, isAvailable, weight } = props;
 
     const servings = getServingsAmount(weight);
 
     const gift = getGiftMessage(weight);
 
-    function selectProduct() {
-        setIsSelected(!isSelected);
-    }
-
-    let cardClass = 'card';
+    const cardClasses = ['card'];
 
     if (isAvailable && !isSelected) {
-        cardClass += ' card_default';
-    } else if (!isAvailable) {
-        cardClass += ' card_disabled';
+        if (isSelectionChanged) {
+            cardClasses.push('card_default_initial');
+        } else {
+            cardClasses.push('card_default');
+        }
     } else if (isSelected) {
-        cardClass += ' card_selected';
+        if (isSelectionChanged) {
+            cardClasses.push('card_selected_initial');
+        } else {
+            cardClasses.push('card_selected');
+        }
+    } else if (!isAvailable) {
+        cardClasses.push('card_disabled');
+    }
+
+    function markSelected(selected) {
+        if (isAvailable) {
+            setIsSelected(!selected);
+            setIsSelectionChanged(true);
+        }
     }
 
     return (
-        <div className={cardClass}>
-            <div className="card__border" onClick={isAvailable ? () => selectProduct() : null}>
+        <div
+            className={cardClasses.join(' ')}
+            onMouseOut={() => setIsSelectionChanged(false)}
+            onBlur={() => setIsSelectionChanged(false)}
+        >
+            <div
+                className="card__border"
+                onClick={isAvailable ? () => markSelected(isSelected) : null}
+            >
                 <div className="card__backdrop">
                     <div className="card__text">
                         <p className="card__tagline">{tagline}</p>
@@ -53,7 +72,7 @@ function Card(props) {
                 isSelected={isSelected}
                 flavorName={flavorName}
                 flavorDescription={flavorDescription}
-                selectProduct={selectProduct}
+                markSelected={markSelected}
             />
         </div>
     );

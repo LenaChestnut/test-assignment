@@ -198,15 +198,18 @@ p,
 
 /* Selected */
 
-.card_selected .card__border {
+.card_selected .card__border,
+.card_selected_initial .card__border {
     background: linear-gradient(135deg, transparent 30px, transparent 30px, #d91667 30px);
 }
 
-.card_selected .card__backdrop::before {
+.card_selected .card__backdrop::before,
+.card_selected_initial .card__backdrop::before {
     box-shadow: 4px 0 0 #d91667;
 }
 
-.card_selected .card__weight-label {
+.card_selected .card__weight-label,
+.card_selected_initial .card__weight-label {
     background: #d91667;
 }
 
