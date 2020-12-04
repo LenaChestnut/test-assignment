@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Setup files for projects",
   "private": "true",
+  "homepage": "http://lenachestnut.github.io/test-assignment",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack serve --config webpack.dev.js"
+    "start": "webpack serve --config webpack.dev.js",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Elena Kashtanova",
   "license": "ISC",
